@@ -2,4 +2,4 @@
 for char in range(97, 123):
     if char == ord('e') or char == ord('q'):
         continue
-    print(f"{chr(char)}", end='')
+    print("{}".format(chr(char)), end='')
