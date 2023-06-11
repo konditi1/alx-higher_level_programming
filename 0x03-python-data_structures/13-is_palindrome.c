@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
 
 /**
@@ -53,7 +55,7 @@ int is_palindrome(listint_t **head)
 listint_t *slow = *head;
 listint_t *fast = *head;
 listint_t *prev = NULL;
-listint_t *next = NULL;
+listint_t *mid = NULL;
 
 if (*head == NULL || (*head)->next == NULL)
 return (1);
@@ -65,27 +67,26 @@ prev = slow;
 slow = slow->next;
 }
 
-next = slow;
-prev->next = NULL;
-
-while (next != NULL)
+if (fast != NULL)
 {
-next = slow->next;
-slow->next = prev;
-prev = slow;
-slow = next;
-}
-
-*head = prev;
-fast = *head;
-
-while (fast != NULL && slow != NULL)
-{
-if (fast->n != slow->n)
-return (0);
-fast = fast->next;
+mid = slow;
 slow = slow->next;
 }
 
-return (1);
+prev->next = NULL;
+reverseList(&slow);
+
+int is_palindrome = compareLists(*head, slow);
+
+if (mid != NULL)
+{
+prev->next = mid;
+mid->next = slow;
+}
+else
+{
+prev->next = slow;
+}
+
+return (is_palindrome);
 }
