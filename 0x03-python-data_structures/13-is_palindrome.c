@@ -17,14 +17,11 @@ current->next = prev;
 prev = current;
 current = next;
 }
-
 *head = prev;
 }
-
 /**
 * is_palindrome - Checks if a singly linked list is a palindrome.
 * @head: Double pointer to the head of the linked list.
-*
 * Return: 1 if the list is a palindrome, 0 otherwise.
 */
 int is_palindrome(listint_t **head)
@@ -35,7 +32,6 @@ int is_palindrome = 1;
 
 if (*head == NULL || (*head)->next == NULL)
 return (1);
-
 while (fast != NULL && fast->next != NULL)
 {
 fast = fast->next->next;
@@ -44,15 +40,11 @@ slow->next = prev;
 prev = slow;
 slow = temp;
 }
-
 if (fast != NULL)
 {
-/* For odd-length lists, move slow pointer one step further*/
 slow = slow->next;
 }
-
 reverse_list(&prev);
-
 while (prev != NULL && slow != NULL)
 {
 if (prev->n != slow->n)
@@ -63,6 +55,12 @@ break;
 prev = prev->next;
 slow = slow->next;
 }
-
+reverse_list(&prev);
+temp = prev;
+while (temp->next != NULL)
+{
+temp = temp->next;
+}
+temp->next = slow;
 return (is_palindrome);
 }
