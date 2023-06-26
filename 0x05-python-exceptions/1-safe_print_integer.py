@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 def safe_print_integer(value):
     try:
+        if value is None:
+            raise TypeError                  
         print("{:d}".format(value))
     except (ValueError, TypeError):
         pass
