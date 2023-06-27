@@ -4,7 +4,6 @@ __size(int) as attribute
 """
 
 
-
 class Square:
     """
     Represents a square.
