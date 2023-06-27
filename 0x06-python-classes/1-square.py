@@ -3,6 +3,8 @@
 __size(int) as attribute
 """
 
+
+
 class Square:
     """
     Represents a square.
@@ -29,4 +31,3 @@ class Square:
             None
         """
         self.__size = size
-
