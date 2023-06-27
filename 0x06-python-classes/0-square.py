@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" this module contains the square class"""
+
+
 class Square:
     """
     Represents a square.
@@ -25,4 +28,3 @@ class Square:
             None
         """
         pass
-
