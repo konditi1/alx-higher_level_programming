@@ -41,3 +41,7 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+    """__repr__ method which returns a string representation of the rectangle"""
+
+    def __repr__(self):
+        return f"Rectangle(height={self.__height}, width={self.__width})"
