@@ -1,0 +1,26 @@
+    text_indentation prints a text with 2 new lines after
+    each of these characters . , ? and :
+    parameter
+    text: str
+        the text to be printed
+    return: None
+
+    Examples:
+	>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+    >>> text_indentation("Hello. This is a sentence. What is your name?")
+    Hello.
+    <BLANKLINE>
+     This is a sentence.
+    <BLANKLINE>
+     What is your name?
+
+    >>> text_indentation("Python is awesome")
+    Python is awesome
+
+
+    >>> text_indentation("")
+    text cannot be empty
+
+    >>> text_indentation(123)
+    text must be a string

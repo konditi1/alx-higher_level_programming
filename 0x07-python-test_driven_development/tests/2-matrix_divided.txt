@@ -1,0 +1,33 @@
+ Divide all elements of a matrix by a divisor.
+
+    :param matrix: A matrix represented as a list of lists of integers.
+    :param div: The divisor, an integer or a float.
+    :return: A new matrix with all elements divided by the divisor.
+    >>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 2)
+    [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+
+    >>> matrix_divided([[0, 0], [0, 0]], 3)
+    [[0.0, 0.0], [0.0, 0.0]]
+
+    >>> matrix_divided([[1, 2], [3, 4]], 0.5)
+    [[2.0, 4.0], [6.0, 8.0]]
+
+    >>> matrix_divided([[1, 2], [3, 4]], 0)
+    ZeroDivisionError('division by zero')
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], '2')
+    TypeError('div must be a number')
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, '6']], 2)
+    TypeError('matrix must be a matrix (list of lists)                               of integers/floats')
+
+    >>> matrix_divided([], 2)
+    ValueError('matrix cannot be empty')
+
+    >>> matrix_divided([[1, 2], [3, 4, 5]], 2)
+    TypeError('Each row of the matrix must                                    have the same size')
+
+    >>> matrix_divided([[1, 2], [3, 4]], [2])
+    TypeError('div must be a number')

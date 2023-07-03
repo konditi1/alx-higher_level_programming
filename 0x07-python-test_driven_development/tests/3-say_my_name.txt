@@ -1,0 +1,25 @@
+Say My Name
+
+This function prints a person's name.
+
+:param first_name: The first name of the person.
+:param last_name: (optional) The last name of the person.
+:return: None
+
+Examples:
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+>>> say_my_name("John", "Doe")
+My name is John Doe
+
+>>> say_my_name("Alice")
+My name is Alice
+
+>>> say_my_name(123, "Smith")
+first_name must be a string
+
+>>> say_my_name("Bob", 456)
+last_name must be a string
+
+>>> say_my_name()
+first_name and last_name must not be empty
