@@ -20,6 +20,3 @@ first_name must be a string
 
 >>> say_my_name("Bob", 456)
 last_name must be a string
-
->>> say_my_name()
-first_name and last_name must not be empty

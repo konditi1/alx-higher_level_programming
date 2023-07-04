@@ -20,7 +20,7 @@ def text_indentation(text):
             raise ValueError("text cannot be empty")
         punctuation = [".", "?", ":"]
         for char in punctuation:
-            text = text.replace(char, char + "\n\n")
+            text = text.replace(char + " ", char + "\n\n")
         print(text.strip(), end="")
     except(TypeError, ValueError) as e:
         print(e)

@@ -11,9 +11,9 @@
     >>> text_indentation("Hello. This is a sentence. What is your name?")
     Hello.
     <BLANKLINE>
-     This is a sentence.
+    This is a sentence.
     <BLANKLINE>
-     What is your name?
+    What is your name?
 
     >>> text_indentation("Python is awesome")
     Python is awesome
