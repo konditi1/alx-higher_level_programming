@@ -5,5 +5,7 @@
 
 
 class LockedClass:
-"""attribute first name"""
+    """
+      class with a locked attribute first name
+    """
     __slots__ = "first_name"
