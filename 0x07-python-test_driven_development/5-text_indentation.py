@@ -21,9 +21,9 @@ def text_indentation(text):
         punctuation = [".", "?", ":"]
         for char in punctuation:
             if char + " " in text:
-                text = text.replace(char + " ", char + "\n\n")
+                text = text.replace(char + " ", char + "\n\n").strip()
             else:
-                text = text.replace(char, char + "\n\n")
+                text = text.replace(char, char + "\n\n").strip()
         print(text, end="")
     except(TypeError, ValueError) as e:
         print(e)
