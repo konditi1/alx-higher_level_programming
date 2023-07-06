@@ -1,13 +1,13 @@
 """
-Module for adding two integers using "0-add_integer" module.
+Module for adding two integers using the "0-add_integer" module.
 
-first import "add_integer" from the "0-add_integer" module.
-    add_integer - performs addition of two integers or floats
-    Parameters:
-        a: first integer or float
-        b: second integer or float
-    Returns:
-        Sum of two integers or floats
+Import "add_integer" from the "0-add_integer" module.
+add_integer - performs addition of two integers or floats.
+Parameters:
+    a: first integer or float.
+    b: second integer or float.
+Returns:
+    Sum of two integers or floats.
 """
 >>> add_integer = __import__('0-add_integer').add_integer
 

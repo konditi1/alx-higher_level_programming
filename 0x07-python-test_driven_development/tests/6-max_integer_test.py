@@ -5,7 +5,8 @@ Test suite for the max_integer function
 
 
 import unittest
-from max_integer import max_integer
+max_integer = __import__('6-max_integer').max_integer
+
 
 class TestMaxInteger(unittest.TestCase):
     """
@@ -56,3 +57,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([1, 1, 1, 1]), 1)
         self.assertEqual(max_integer([-5, -5, -5, -5]), -5)
         self.assertEqual(max_integer([10, 10, 10, 10]), 10)
+
+
+if __name__ == '__main__':
+    unittest.main()
