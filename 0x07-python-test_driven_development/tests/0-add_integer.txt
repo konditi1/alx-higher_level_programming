@@ -9,36 +9,50 @@ Parameters:
 Returns:
     Sum of two integers or floats.
 """
+
 >>> add_integer = __import__('0-add_integer').add_integer
 
-Now use it:
+# Now use it:
+
 >>> add_integer(1, 2)
 3
+
 >>> add_integer(-5, 5)
 0
+
 >>> add_integer(0, 0)
 0
+
 >>> add_integer(100, -100)
 0
+
 >>> add_integer()
-Traceback (most recent call last):
+Traceback(most recent call last):
     ...
 TypeError: add_integer() missing 1 required positional argument: 'a'
+
 >>> add_integer(2)
 100
+
 >>> add_integer(5, 10, 15)
-Traceback (most recent call last):
+Traceback(most recent call last):
     ...
 TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
 >>> add_integer("x", "y")
 TypeError('a must be an integer')
+
 >>> add_integer(1, "y")
 TypeError('b must be an integer')
+
 >>> add_integer(2.5, 3.5)
 5
+
 >>> add_integer(100, -2)
 98
+
 >>> add_integer(4, "School")
 TypeError('b must be an integer')
+
 >>> add_integer(None)
 TypeError('a must be an integer')
