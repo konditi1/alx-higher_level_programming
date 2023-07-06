@@ -14,7 +14,7 @@
     This is a sentence.
     <BLANKLINE>
     What is your name?
-    <BLANKLINE>
+
     >>> text_indentation("Python is awesome")
     Python is awesome
 
@@ -27,14 +27,14 @@
 
     >>> text_indentation("Holberton.School")
     Holberton.
-
+    <BLANKLINE> 
     School
 
     >>> text_indentation("Holberton. School? How are you: John")
     Holberton.
-
+    <BLANKLINE>
     School?
-
+    <BLANKLINE>
     How are you:
-
+    <BLANKLINE>
     John
