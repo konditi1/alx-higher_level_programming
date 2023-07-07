@@ -1,0 +1,32 @@
+"""
+tests for the function matrix_mul
+    param m_a: list of lists of integers
+    param m_b: list of lists of integers
+    return: list of lists of integers
+"""
+
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+>>> matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [4, 5, 6]])
+ValueError("m_a and m_b can't be multiplied")
+
+>>> matrix_mul(123, [[1, 2], [3, 4]])
+TypeError('m_a must be a lists')
+
+>>> matrix_mul([], [[1, 2], [3, 4]])
+ValueError('m_a cannot be empty')
+
+>>> matrix_mul([[1, 2], [3, 4]], '2')
+TypeError('m_b must be a lists')
+
+>>> matrix_mul([[1, 2], [3]], [[1, 2], [3, 4]])
+TypeError('Each row of m_a must be of the same size')
+
+>>> matrix_mul([[1, 2], [3, 4]], [[]])
+ValueError('m_b cannot be empty')
+
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, "four"]])
+ValueError('m_b should contain only integers or floats')
+
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2, 3], [4, 5, 6]])
+[[9, 12, 15], [19, 26, 33]]
