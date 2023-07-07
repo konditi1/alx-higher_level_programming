@@ -25,5 +25,5 @@ def text_indentation(text):
             else:
                 text = text.replace(char, char + "\n\n").strip()
         print(text, end="")
-    except(TypeError, ValueError) as e:
+    except (TypeError, ValueError) as e:
         print(e)
