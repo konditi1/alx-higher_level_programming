@@ -1,0 +1,43 @@
+"""
+class called BaseGeometry
+"""
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+>>> geometry = BaseGeometry()
+
+# Valid integer values
+>>> geometry.integer_validator("valid_int", 10)
+
+# Invalid integer values
+>>> geometry.integer_validator("invalid_int", 0)
+Traceback (most recent call last):
+...
+ValueError: invalid_int must be greater than 0
+
+>>> geometry.integer_validator("invalid_int", -5)
+Traceback (most recent call last):
+...
+ValueError: invalid_int must be greater than 0
+
+# Non-integer values
+>>> geometry.integer_validator("non_int", "ten")
+Traceback (most recent call last):
+...
+TypeError: non_int must be an integer
+
+>>> geometry.integer_validator("non_int", 3.14)
+Traceback (most recent call last):
+...
+TypeError: non_int must be an integer
+
+# Non-integer convertible values
+>>> geometry.integer_validator("convertible_int", "10")
+Traceback (most recent call last):
+...
+TypeError: convertible_int must be an integer
+
+>>> geometry.integer_validator("convertible_int", "3.14")
+Traceback (most recent call last):
+...
+TypeError: convertible_int must be an integer
