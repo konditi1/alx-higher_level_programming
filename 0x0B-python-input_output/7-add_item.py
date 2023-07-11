@@ -23,8 +23,12 @@ def add_arguments_to_list(args):
     """ Save the updated data to the file"""
     save_to_json_file(existing_data, "add_item.json")
 
+
 """Get arguments passed to the script (excluding the script name)"""
+
+
 arguments = sys.argv[1:]
+
 
 """Add the arguments to the list and save them to the file"""
 add_arguments_to_list(arguments)
