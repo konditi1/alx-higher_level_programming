@@ -6,13 +6,15 @@ function that returns dictionary rep with simple structure
 
 def class_to_json(obj):
     """
-    Convert an object to a dictionary with a simple data structure for JSON serialization.
+    Convert an object to a dictionary with a
+    simple data structure for JSON serialization.
 
     Args:
         obj: An object instance of a class.
 
     Returns:
-        dict: A dictionary containing the serializable attributes of the object.
+        dict: A dictionary containing the serializable
+        attributes of the object.
 
     """
     json_dict = {}
