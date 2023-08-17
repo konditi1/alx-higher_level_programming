@@ -3,11 +3,8 @@
 -- sorted in ascending order by tv_shows.title and tv_show_genres.genre_id
 -- use only one SELECT statement
 -- select the database
-USE hbtn_0d_tvshows;
--- list all shows
-SELECT s.title, g.genre_id
-FROM tv_shows AS s
-JOIN tv_show_genres AS g
-ON s.id = g.show_id
-ORDER BY s.title ASC, g.genre_id ASC;
+SELECT tv_shows.title, tv_show_genres.genre_id
+FROM tv_show_genres
+JOIN tv_shows ON tv_show_genres.show_id = tv_shows.id
+ORDER BY tv_shows.title, tv_show_genres.genre_id;
 
