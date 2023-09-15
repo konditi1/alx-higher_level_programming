@@ -2,11 +2,9 @@
 """
 This script lists all states from the specified MySQL database.
 """
-import MySQLdb
-import sys
-
-
-def main():
+if __name__ == "__main__":
+    import MySQLdb
+    import sys
     """
     List all states from the specified MySQL database.
     """
@@ -51,7 +49,3 @@ def main():
             cursor.close()
         if connection:
             connection.close()
-
-
-if __name__ == "__main__":
-    main()
