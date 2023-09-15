@@ -1,13 +1,20 @@
 #!/usr/bin/python3
 """
 This script lists all states from the specified MySQL database.
+
+Usage:
+    ./script_name.py <mysql_username> <mysql_password> <database_name>
+
+Arguments:
+    mysql_username (str): The MySQL username.
+    mysql_password (str): The MySQL password.
+    database_name (str): The name of the database to connect to.
 """
+
 if __name__ == "__main__":
     import MySQLdb
     import sys
-    """
-    List all states from the specified MySQL database.
-    """
+
     if len(sys.argv) != 4:
         print("Usage: {} <mysql_username>"
               " <mysql_password> <database_name>".format(sys.argv[0]))
@@ -42,7 +49,7 @@ if __name__ == "__main__":
             print(state)
 
     except MySQLdb.Error as e:
-        print("Error: {}".format(e))
+        print("Error connecting to the database or executing the query: {}".format(e))
     finally:
         # Close the cursor and the database connection
         if cursor:
