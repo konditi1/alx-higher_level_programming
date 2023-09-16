@@ -32,8 +32,9 @@ def main():
         """ create a cursor object to interact with the database"""
         db_cursor = db_connection.cursor()
         """ execute the SQL query to fetch states"""
-        db_cursor.execute("SELECT cities.id, cities.name, states.name FROM cities "
-                          "JOIN states ON cities.state_id = states.id "
+        db_cursor.execute("SELECT cities.id, cities.name, states.name\
+                          FROM cities JOIN states ON\
+                          cities.state_id = states.id "
                           "ORDER BY cities.id ASC")
         """ fetch all the rows"""
         cities = db_cursor.fetchall()
