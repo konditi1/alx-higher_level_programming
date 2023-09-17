@@ -33,13 +33,12 @@ def main():
         # create a session
         Session = sessionmaker(bind=engine)
         session = Session()
-        # create a query to select all states
-        states = session.query(State).order_by(State.id).all()
-        # display the results
-        for state in states:
-            if state.name.__contains__("a"):
-                session.delete(state)
+        # Delete states with names containing 'a' directly in the SQL query
+        session.query(State).filter(State.name.like('%a%')).delete()
+
+        # Commit the transaction to save the changes to the database
         session.commit()
+
     except sqlalchemy.exc.DatabaseError as e:
         print(e)
     finally:
@@ -47,12 +46,13 @@ def main():
 
 
 """
-        # Delete states with names containing 'a' directly in the SQL query
-        session.query(State).filter(State.name.like('%a%')).delete()
-
-        # Commit the transaction to save the changes to the database
+           # create a query to select all states
+        states = session.query(State).order_by(State.id).all()
+        # display the results
+        for state in states:
+            if state.name.__contains__("a"):
+                session.delete(state)
         session.commit()
-
 """
 
 
