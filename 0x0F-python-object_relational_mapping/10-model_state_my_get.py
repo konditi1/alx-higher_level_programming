@@ -34,7 +34,8 @@ def main():
         Session = sessionmaker(bind=engine)
         session = Session()
         # create a query to select all states
-        state = session.query(State).filter(State.name == state_name_to_search).first()
+        state = session.query(State)
+        state = state.filter(State.name == state_name_to_search).first()
         # display the results
         if state is None:
             print("Not found")
