@@ -7,7 +7,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # URL for Connecting to the database
-DATABASE_URI = 'mysql://papa:2222@localhost/hbtn_0e_6_usa'
+DATABASE_URI = 'mysql://papa:2222@localhost/hbtn_0e_14_usa'
 
 
 class City(Base):
