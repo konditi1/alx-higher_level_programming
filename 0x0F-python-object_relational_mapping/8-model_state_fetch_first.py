@@ -25,7 +25,8 @@ def main():
 
     try:
         # create database engine and connect to the database
-        engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(username, password, database_name),
+        engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+            username, password, database_name),
                                pool_pre_ping=True)
         # create a session
         Session = sessionmaker(bind=engine)
