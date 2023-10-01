@@ -4,6 +4,7 @@
 """
 import requests
 from sys import argv
+from requests.auth import HTTPBasicAuth
 
 
 if __name__ == "__main__":
@@ -11,13 +12,8 @@ if __name__ == "__main__":
         print("Usage: {} <username> <password>".format(argv[0]))
         exit(1)
     url = "https://api.github.com/user"
-    data = {'username': argv[1], 'password': argv[2]}
-    r = requests.post(url, data=data)
-    try:
-        response = r.json()
-        if response == {}:
-            print("No result")
-        else:
-            print("[{}] {}".format(response.get("id"), response.get("name")))
-    except ValueError:
-        print("Not a valid JSON")
+    username = argv[1]
+    password = argv[2]
+    data = HTTPBasicAuth(username, password)
+    response = requests.post(url, auth=data)
+    print(response.json().get("id"))
