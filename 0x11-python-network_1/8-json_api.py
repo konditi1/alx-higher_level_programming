@@ -14,7 +14,7 @@ data = {'q': letter}
 response = requests.post('http://0.0.0.0:5000/search_user', data=data)
 
 try:
-    # If the response body is properly JSON formatted and not empty
+    # If the response body is properly JSON formatted
     json_dict = response.json()
     if json_dict == {}:
         print("No result")
