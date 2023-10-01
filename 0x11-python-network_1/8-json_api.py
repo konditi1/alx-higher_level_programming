@@ -4,8 +4,12 @@
 import sys
 import requests
 
+# check if more than one argument is provided
+if len(sys.argv) != 2:
+    print("Usage: {} <letter>".format(sys.argv[0]))
+    sys.exit(1)
 # check if letter is provided as an argument
-if len(sys.argv) != 2 or not sys.argv[1].isalpha():
+if len(sys.argv) != 1 or not sys.argv[1].isalpha():
     letter = ""
 else:
     letter = sys.argv[1]
@@ -22,4 +26,3 @@ try:
         print(f"[{json_dict['id']}] {json_dict['name']}")
 except ValueError:
     print("Not a valid JSON")
-sys.exit(1)
