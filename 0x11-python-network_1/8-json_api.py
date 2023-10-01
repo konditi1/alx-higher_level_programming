@@ -3,13 +3,13 @@
 # with the letter as a parameter
 import sys
 import requests
-
+# get the letter
 # check if letter is provided as an argument
 if len(sys.argv) != 2 or not sys.argv[1].isalpha():
     letter = ""
 else:
     letter = sys.argv[1]
-data = {'q': letter}
+data = {"q": letter}
 # send a POST request to the passed URL with the letter as a parameter
 response = requests.post('http://0.0.0.0:5000/search_user', data=data)
 
