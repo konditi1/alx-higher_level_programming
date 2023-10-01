@@ -5,24 +5,21 @@ import sys
 import requests
 
 # check if more than one argument is provided
-if len(sys.argv) != 2:
-    print("Usage: {} <letter>".format(sys.argv[0]))
-    sys.exit(1)
-# check if letter is provided as an argument
-if len(sys.argv) != 1 or not sys.argv[1].isalpha():
-    letter = ""
-else:
-    letter = sys.argv[1]
-data = {'q': letter}
-# send a POST request to the passed URL with the letter as a parameter
-response = requests.post('http://0.0.0.0:5000/search_user', data=data)
-
-try:
-    # If the response body is properly JSON formatted and not empty
-    json_dict = response.json()
-    if json_dict == {}:
-        print("No result")
+if __name__ == "__main__":
+    if len(sys.argv) == 1:
+        letter = ""
     else:
-        print(f"[{json_dict['id']}] {json_dict['name']}")
-except ValueError:
-    print("Not a valid JSON")
+        letter = sys.argv[1]
+    data = {'q': letter}
+    # send a POST request to the passed URL with the letter as a parameter
+    response = requests.post('http://0.0.0.0:5000/search_user', data=data)
+
+    try:
+        # If the response body is properly JSON formatted and not empty
+        json_dict = response.json()
+        if json_dict == {}:
+            print("No result")
+        else:
+            print(f"[{json_dict['id']}] {json_dict['name']}")
+    except ValueError:
+        print("Not a valid JSON")
