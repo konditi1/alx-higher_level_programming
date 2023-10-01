@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# script that takes a letter and sends a post request to http://0.0.0.0:5000/search_user
+# script that takes a letter and sends a post request to url
 # with the letter as a parameter
 import sys
 import requests
