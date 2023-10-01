@@ -1,14 +1,18 @@
 #!/usr/bin/python3
 """
-Search API
+# script that takes a letter and sends a post request to url
+# with the letter as a parameter
 """
 import sys
 import requests
 
 
 if __name__ == "__main__":
-    alpha = "" if len(sys.argv) == 1 else sys.argv[1]
-    payload = {"q": alpha}
+    if len(sys.argv) == 1:
+        letter = ""
+    else:
+        letter = sys.argv[1]
+    payload = {"q": letter}
 
     r = requests.post("http://0.0.0.0:5000/search_user", data=payload)
     try:
