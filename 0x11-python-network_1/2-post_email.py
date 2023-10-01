@@ -5,19 +5,21 @@
 import sys
 from urllib import request, error, parse
 
-# check if url and email is provided as an argument
-if len(sys.argv) != 3:
-    print("Usage: {} <url> <email>".format(sys.argv[0]))
-    sys.exit()
-# get the url and email
-url = sys.argv[1]
-email = sys.argv[2]
-data = {'email': email}
-data = parse.urlencode(data).encode('utf-8')
-req = request.Request(url, data=data, method='POST')
-try:
-    with request.urlopen(req) as response:
-        html = response.read().decode('utf-8')
-        print(html)
-except error.HTTPError as error:
-    print("Error code: {}".format(error.code))
+
+if __name__ == "__main__":
+    # check if url and email is provided as an argument
+    if len(sys.argv) != 3:
+        print("Usage: {} <url> <email>".format(sys.argv[0]))
+        sys.exit()
+    # get the url and email
+    url = sys.argv[1]
+    email = sys.argv[2]
+    data = {'email': email}
+    data = parse.urlencode(data).encode('utf-8')
+    req = request.Request(url, data=data, method='POST')
+    try:
+        with request.urlopen(req) as response:
+            html = response.read().decode('utf-8')
+            print(html)
+    except error.HTTPError as error:
+        print("Error code: {}".format(error.code))
