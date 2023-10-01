@@ -11,7 +11,7 @@ url = sys.argv[1]
 # open the url and read the response
 try:
     with requests.get(url) as response:
-        html = response.text
+        html = response.text.decode('utf-8')
         print(html)
 except requests.exceptions.HTTPError as error:
     print("Error code: {}".format(error.code))
