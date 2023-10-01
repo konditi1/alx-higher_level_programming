@@ -7,8 +7,8 @@ import requests
 # check if letter is provided as an argument
 if len(sys.argv) != 2 or not sys.argv[1].isalpha():
     letter = ""
-    print("No request")
-    sys.exit(1)
+    # print("No request")
+    # sys.exit(1)
 else:
     letter = sys.argv[1]
 data = {'q': letter}
